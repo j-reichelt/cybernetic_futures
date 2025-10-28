@@ -1,1 +1,21 @@
-h1 {color:crimson};
+h1, p {text-align: center;
+}
+
+h1 {color:#FFFFFF;
+    text-shadow: 0 0 5px #FFFFFF, 0 0 10px #FFFFFF, 0 0 20px #FFFFFF;
+    font-family: 'Orbitron', sans-serif; 
+}
+
+p {color: #1ffbff;
+    text-shadow: 0 0 5px #1ffbff, 0 0 10px #1ffbff, 0 0 20px #1ffbff;
+}
+
+body {background-color: black;
+}
+
+img {max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+  
