@@ -66,4 +66,15 @@ img {max-width: 50%;
     display: block;
     margin: 0 auto;
 }
+
+#temp p {
+    font-family: 'Orbitron', sans-serif;
+    color: #FFF700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.5em;
+    text-align: center;
+    text-shadow: 0 0 5px #FFF700, 0 0 10px #FFF700, 0 0 20px #FFFB91; 
+
+}
   
