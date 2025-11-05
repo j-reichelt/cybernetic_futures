@@ -133,6 +133,43 @@ img {max-width: 50%;
     object-fit: cover;
 }
 
+/* noticed odd spacing of caption text with avatar images, query
+conflict of spacing around other elements */
+
+.avatar_figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+}
+
+.avatar_figure img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.avatar_figure figcaption {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #00FFFF;
+    text-shadow: 0 0 5px #00FFFF, 0 0 10px #FF00FF;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+/* images need to scale consistently */
+.avatar_figure img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    display: block;
+}
+
 /* Responsive design & adaptations */
 @media (max-width: 1024px) {
     .augment_grid {
