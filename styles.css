@@ -13,7 +13,7 @@ body {
     color: #1FFBFF;
     margin: 0;
     padding: 0;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 .hero {
@@ -78,7 +78,7 @@ body {
     100% {text-shadow: 0 0 5px #D400FF, 0 0 10px #A200FF;}
 }
 
-h1, p {text-align: center;
+h1,{text-align: center;
 }
 
 h1 {color:#FFFFFF;
@@ -88,7 +88,8 @@ h1 {color:#FFFFFF;
 
 p {color: #1ffbff;
    text-shadow: 0 0 5px #1ffbff, 0 0 10px #1ffbff, 0 0 20px #1ffbff;
-   font-family: 'Orbitron', sans-serif; 
+   font-family: 'Orbitron', sans-serif;
+   text-align: left; 
 
 }
 
@@ -150,6 +151,13 @@ conflict of spacing around other elements */
     height: auto;
     display: block;
     border-radius: 10px;
+}
+
+/* experiment with hover effect for avatar grid images */
+.avatar_figure img:hover{
+transform: scale(1.10);
+box-shadow: 0 0 20px #00FFFF, 0 0 40px #FF00FF;
+transition: transform 0.3s, ease, box-shadow 0.3s ease;
 }
 
 .avatar_figure figcaption {
