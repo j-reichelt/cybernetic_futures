@@ -186,6 +186,11 @@ footer {
     text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
 }
 
+.footer {
+    margin: 2px 0;
+    line-height: 1.2;
+}
+
 .footer-list {
     /*list-style: none; this removes the bullets*/
     padding: 0;
