@@ -335,6 +335,7 @@ footer {
 	position: relative;
 	max-width: 900px;
 	margin: 50px auto;
+	padding: 40px 0;
 }
 /* beam of light vertically to act as timeline 'line'. */
 .timeline::after {
@@ -347,10 +348,11 @@ footer {
 	left: 50%;
 	margin-left: -2px;
 	box-shadow: 0 0 15px #0ff, 0 0 30px #ff00ff;
+	transform: translateX(-50%);
 }
 
 .container {
-	padding: 20px 40px;
+	padding: 10px 40px;
 	position: relative;
 	width: 50%;
 }
@@ -359,24 +361,26 @@ footer {
 	left: 0;
 }
 
-container.right {
+.container.right {
 	left: 50%;
 }
-
+/* timeline nodes */
 .container::before {
 	content: "";
 	position: absolute;
-	width: 25px;
-	right: -13px; /* this is for the left side */
+	width: 20px;
+	height: 20px;
 	background-color: #ff00ff;
 	border: 4px solid #0ff;
 	top: 15px;
+	left: -10px; /* targets left nodes */
 	border-radius: 50%;
 	box-shadow: 0 0 15px #0ff, 0 0 30px #ff00ff;
 }
 
 .container.right::before {
-	left: -13px;
+	left: auto;
+	right: -10px; /* targets the right nodes */
 }
 
 .timeline-page h1 {
