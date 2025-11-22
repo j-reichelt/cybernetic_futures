@@ -1,3 +1,4 @@
+/* Theme for consistency throughout web app */
 body {
 	background-color: black;
 	font-family: "Orbitron", sans-serif;
@@ -6,7 +7,8 @@ body {
 	padding: 0;
 	text-align: center;
 }
-
+/* Homepage - humble beginnings */
+/* Research showed that a hero section is near the top of a page - contains key elements */
 .hero {
 	text-align: center;
 	margin: 40px 0;
@@ -35,6 +37,8 @@ body {
 	font-size: 1.2em;
 	margin-bottom: 40px;
 }
+/* Navigation at top of pages */
+
 #topnav {
 	/*position: sticky; /* keeps nav bar at top of page while scrolling */
 	/*top: 0; /* nav bar sticks to top edge of page */
@@ -176,14 +180,12 @@ footer {
 	margin: 0 auto;
 	padding: 0 20px 40px 20px;
 }
-/* keeps contact us and quick links on a row together
-while putting newsletter form beneath */
 
 .footer-top {
 	display: flex;
 	justify-content: space-between;
 	width: 100%;
-	align-items: flex-start; /*a ligns contact us AND quick links on the same level/line */
+	align-items: flex-start; /* aligns contact us AND quick links on the same level/line */
 	gap: 50px;
 }
 .footer-content {
@@ -328,6 +330,26 @@ while putting newsletter form beneath */
 	margin: 0;
 	text-shadow: none;
 }
+/* Timeline/Chronosynapse Section - Definitely needs work */
+.timeline {
+	position: relative;
+	max-width: 900px;
+	margin: 50px auto;
+}
+
+.timeline::after {
+	content: "";
+	position: absolute;
+	width: 4px;
+	background: #0ff;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	margin-left: -2px;
+	box-shadow: 0 0 15px #0ff, 0 0 30px #ff00ff;
+}
+
+/* Augmentations CSS Section - mostly grid stuff */
 
 .augment_grid {
 	display: grid;
