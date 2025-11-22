@@ -336,7 +336,7 @@ footer {
 	max-width: 900px;
 	margin: 50px auto;
 }
-
+/* beam of light vertically to act as timeline 'line'. */
 .timeline::after {
 	content: "";
 	position: absolute;
@@ -347,6 +347,52 @@ footer {
 	left: 50%;
 	margin-left: -2px;
 	box-shadow: 0 0 15px #0ff, 0 0 30px #ff00ff;
+}
+
+.container {
+	padding: 20px 40px;
+	position: relative;
+	width: 50%;
+}
+
+.container.left {
+	left: 0;
+}
+
+container.right {
+	left: 50%;
+}
+
+.container::before {
+	content: "";
+	position: absolute;
+	width: 25px;
+	right: -13px; /* this is for the left side */
+	background-color: #ff00ff;
+	border: 4px solid #0ff;
+	top: 15px;
+	border-radius: 50%;
+	box-shadow: 0 0 15px #0ff, 0 0 30px #ff00ff;
+}
+
+.container.right::before {
+	left: -13px;
+}
+
+.timeline-page h1 {
+	color: #ff00ff;
+	font-size: 3em;
+	text-shadow: 0 0 10px #ff00ff, 0 0 20px #0ff, 0 0 30px, #ff00ff;
+	animation: neonPulse 1.5s infinite alternate;
+}
+
+.timeline-page h2 {
+	background: linear-gradient(90deg, #0ff, #ff00ff);
+	padding: 5px 15px;
+	border-radius: 8px;
+	display: inline-block;
+	color: #000;
+	box-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
 }
 
 /* Augmentations CSS Section - mostly grid stuff */
