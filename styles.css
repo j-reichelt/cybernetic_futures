@@ -344,25 +344,65 @@ footer {
 	width: 4px;
 	background: #0ff;
 	top: 0;
-	bottom: 0;
+	bottom: 0; /* should stop at lost node instead of cutting down to the bottom of page */
+	height: auto;
 	left: 50%;
-	margin-left: -2px;
 	box-shadow: 0 0 15px #0ff, 0 0 30px #ff00ff;
 	transform: translateX(-50%);
 }
 
 .container {
-	padding: 10px 40px;
+	padding: 20px 40px;
 	position: relative;
-	width: 50%;
+	width: 45%;
+}
+/* Connect spine to 'Year' headers */
+.container h2 {
+	position: relative;
+	display: inline-block;
+	background: linear-gradient(90deg, #0ff, #ff00ff);
+	padding: 5px 15px;
+	border-radius: 8px;
+	color: #000;
+	box-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
+}
+
+/* Connecting lines from spine to header */
+.container.left h2::before,
+.container.right h2::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	width: 40px;
+	height: 2px;
+	background: #0ff;
+	box-shadow: 0 0 5px #0ff, 0 0 10px #ff00ff;
+}
+/* line pointing right from spine */
+.container.left h2::before {
+	right: -40px;
+}
+/* line pointing left from spine */
+.container.right h2::before {
+	left: -40px;
+}
+
+.content {
+	background: rgba(0, 0, 0, 0.3);
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px #0FF55, 0 0 20px #ff00ff33;
+	margin-top: 10px;
 }
 
 .container.left {
 	left: 0;
+	text-align: right;
 }
 
 .container.right {
-	left: 50%;
+	left: 55%;
+	text-align: left;
 }
 /* timeline nodes */
 .container::before {
@@ -397,6 +437,28 @@ footer {
 	display: inline-block;
 	color: #000;
 	box-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
+}
+
+/* Timeline Responsive Design Adjustments */
+@media (max-width: 768px) {
+	.container,
+	.container.left,
+	.container.right {
+		width: 90%;
+		left: 5%;
+		text-align: left;
+	}
+	.container h2::before {
+		display: none;
+	}
+	.timeline::after {
+		left: 20px;
+		height: 100%;
+	}
+	.container::before {
+		left: -10px;
+		right: auto;
+	}
 }
 
 /* Augmentations CSS Section - mostly grid stuff */
@@ -777,7 +839,7 @@ table img {
 	0%,
 	100% {
 		opacity: 1;
-		transorm: translateX(0);
+		transform: translateX(0);
 	}
 	92% {
 		opacity: 0.95;
