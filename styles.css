@@ -345,7 +345,6 @@ footer {
 	background: #0ff;
 	top: 0;
 	bottom: 0; /* should stop at lost node instead of cutting down to the bottom of page */
-	height: auto;
 	left: 50%;
 	box-shadow: 0 0 15px #0ff, 0 0 30px #ff00ff;
 	transform: translateX(-50%);
@@ -366,25 +365,44 @@ footer {
 	color: #000;
 	box-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
 }
+.container.left h2 {
+	margin-left: 0px;
+}
 
+.container.right h2 {
+	margin-right: 0px;
+}
 /* Connecting lines from spine to header */
-.container.left h2::before,
+.container.left h2::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: -50px;
+	width: 50px;
+	height: 2px;
+	background: #0ff;
+	box-shadow: 0 0 5px #0ff, 0 0 10px #ff00ff;
+}
+
 .container.right h2::before {
 	content: "";
 	position: absolute;
 	top: 50%;
-	width: 40px;
+	left: -50px;
+	width: 50px;
 	height: 2px;
 	background: #0ff;
 	box-shadow: 0 0 5px #0ff, 0 0 10px #ff00ff;
 }
 /* line pointing right from spine */
 .container.left h2::before {
-	right: -40px;
+	right: calc(100% + 10px);
+	width: 50px;
 }
 /* line pointing left from spine */
 .container.right h2::before {
-	left: -40px;
+	left: calc(100% + 10px);
+	width: 50px;
 }
 
 .content {
@@ -396,31 +414,17 @@ footer {
 }
 
 .container.left {
+	position: relative;
+	width: 45%;
 	left: 0;
 	text-align: right;
 }
 
 .container.right {
+	position: relative;
+	width: 45%;
 	left: 55%;
 	text-align: left;
-}
-/* timeline nodes */
-.container::before {
-	content: "";
-	position: absolute;
-	width: 20px;
-	height: 20px;
-	background-color: #ff00ff;
-	border: 4px solid #0ff;
-	top: 15px;
-	left: -10px; /* targets left nodes */
-	border-radius: 50%;
-	box-shadow: 0 0 15px #0ff, 0 0 30px #ff00ff;
-}
-
-.container.right::before {
-	left: auto;
-	right: -10px; /* targets the right nodes */
 }
 
 .timeline-page h1 {
