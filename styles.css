@@ -191,7 +191,7 @@ while putting newsletter form beneath */
     color: #FF00FF;
     text-transform: uppercase;
     font-size: 1.4em;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
 }
 
@@ -207,7 +207,7 @@ while putting newsletter form beneath */
 }
 
 .footer-list li {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .footer-list a {
@@ -221,20 +221,22 @@ while putting newsletter form beneath */
 .footer-content-newsletter {
     width: 100%;
     text-align: left;
-    margin-top: 30px;
+    margin-top: 0px;
 }
 
 .footer-content-newsletter h3 {
     color: #FF00FF;
     text-transform: uppercase;
     font-size: 1.4em;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF;
+
 }
 
 .footer-content-newsletter p {
     padding-left: 0;
     padding-right: 0;
+    margin-bottom: 10px;
 }
 
 .footer-list a:hover {
@@ -248,10 +250,10 @@ while putting newsletter form beneath */
 }
 .contact-info p {
     /* override global P tag for padding/alignment */
-    padding: 0px;
     text-align: left;
-    margin: 0 0 10px 0;
-    line-height: 1.5;
+    margin: 0, 0, 4px, 0;
+    line-height: 1.0;
+    padding: 0;
 }
 
 .footer-content p {
@@ -261,6 +263,17 @@ while putting newsletter form beneath */
     color: #1FFBFF;
     text-shadow: none;
     font-size: 1em;
+}
+
+.contact-info, .footer-content-newsletter {
+    padding-left: 0;
+    margin-left: 20px;
+}
+
+.contact-info p, .footer-content-newsletter p {
+    padding: 0;
+    margin: 0 0 6px 0;
+    line-height: 1.2;
 }
 
 .bottom-bar {
