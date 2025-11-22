@@ -166,13 +166,22 @@ footer {
 
 .footer-container {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
     max-width: 1200px;
     margin: 0 auto; 
     padding: 0 20px 40px 20px;
 }
+/* keeps contact us and quick links on a row together
+while putting newsletter form beneath */
 
+.footer-top {
+    display: flex;
+    gap: 50px;
+    justify-content: flex-start;
+    width: 100%;
+}
 .footer-content {
     flex-basis: 250px;
     margin: 0 20px;
@@ -209,11 +218,20 @@ footer {
     transition: color 0.3s ease;
 }
 
+.footer-content-newsletter {
+    width: 100%;
+    text-align: left;
+    margin-top: 30px;
+}
+
 .footer-list a:hover {
     color: #FFFFFF;
     text-shadow: 0 0 5px #FFFFFF;
 }
 
+.footer-content quick-links {
+    text-align: right;
+}
 .contact-info p {
     /* override global P tag for padding/alignment */
     padding: 0px;
