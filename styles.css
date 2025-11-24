@@ -336,95 +336,104 @@ footer {
 	max-width: 900px;
 	margin: 50px auto;
 	padding: 40px 0;
+	z-index: 1; /* keeps the timeline below the nav/banner */
 }
-/* beam of light vertically to act as timeline 'line'. */
+/* Vertical neon spline */
 .timeline::after {
 	content: "";
 	position: absolute;
-	width: 4px;
-	background: #0ff;
 	top: 0;
-	bottom: 0; /* should stop at lost node instead of cutting down to the bottom of page */
+	bottom: 0;
 	left: 50%;
-	box-shadow: 0 0 15px #0ff, 0 0 30px #ff00ff;
+	width: 4px;
+	background: #00ffff;
 	transform: translateX(-50%);
+	border-radius: 2px;
+	box-shadow: 0 0 15px #00ffff, 0 0 30px #ff00ff;
+	z-index: 1;
 }
 
+/* Timeline event containers (left or right) */
 .container {
-	padding: 20px 40px;
 	position: relative;
 	width: 45%;
+	margin: 50px 0;
 }
-/* Connect spine to 'Year' headers */
+
+/* Timeline headings (years) */
 .container h2 {
 	position: relative;
 	display: inline-block;
-	background: linear-gradient(90deg, #0ff, #ff00ff);
-	padding: 5px 15px;
-	border-radius: 8px;
-	color: #000;
-	box-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
-}
-.container.left h2 {
-	margin-left: 0px;
-}
-
-.container.right h2 {
-	margin-right: 0px;
-}
-/* Connecting lines from spine to header */
-.container.left h2::before {
-	content: "";
-	position: absolute;
-	top: 50%;
-	right: -50px;
-	width: 50px;
-	height: 2px;
-	background: #0ff;
-	box-shadow: 0 0 5px #0ff, 0 0 10px #ff00ff;
-}
-
-.container.right h2::before {
-	content: "";
-	position: absolute;
-	top: 50%;
-	left: -50px;
-	width: 50px;
-	height: 2px;
-	background: #0ff;
-	box-shadow: 0 0 5px #0ff, 0 0 10px #ff00ff;
-}
-/* line pointing right from spine */
-.container.left h2::before {
-	right: calc(100% + 10px);
-	width: 50px;
-}
-/* line pointing left from spine */
-.container.right h2::before {
-	left: calc(100% + 10px);
-	width: 50px;
-}
-
-.content {
-	background: rgba(0, 0, 0, 0.3);
-	padding: 15px;
+	padding: 6px 18px;
+	background: linear-gradient(90deg, #00ffff, #ff00ff);
 	border-radius: 10px;
-	box-shadow: 0 0 10px #0FF55, 0 0 20px #ff00ff33;
-	margin-top: 10px;
+	color: black;
+	font-weight: bold;
+	z-index: 5;
+	box-shadow: 0 0 px #00ffff, 0 0 20px #ff00ff;
 }
-
+/* Base connector line */
+.container::after {
+	content: "";
+	position: absolute;
+	top: 28px;
+	height: 3px;
+	background: #00ffff;
+	z-index: 2;
+	box-shadow: 0 0 8px #00ffff;
+}
+/* LEFT Side: line extends RIGHT to the spline */
 .container.left {
-	position: relative;
-	width: 45%;
 	left: 0;
 	text-align: right;
 }
 
+.container.left::after {
+	right: -50%;
+	width: calc(50% - 20px);
+}
+
+/* Right Side: line extends LEFT to the spline */
 .container.right {
-	position: relative;
-	width: 45%;
 	left: 55%;
 	text-align: left;
+}
+
+.container.right::after {
+	left: -50%;
+	width: calc(50% - 20px);
+}
+
+/* Sphere nodes at Spline Connections */
+.container::before {
+	content: "";
+	position: absolute;
+	top: 14px; /* verticall aligns with h2 */
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #00ffff;
+	z-index: 4;
+	box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff, 0 0 30px #00ffff;
+}
+
+/* LEFT node: connection at the spine */
+.container.left::before {
+	right: calc(-50% - 8px);
+}
+
+/* RIGHT node: connection at spine */
+.container.right::before {
+	left: calc(-50% - 8px);
+}
+.content {
+	background: rgba(0, 0, 0, 0.6);
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 0 0 10px #00ffff55, 0 0 20px #ff00ff44;
+	margin-top: 10px;
+	position: relative;
+	z-index: 2;
 }
 
 .timeline-page h1 {
@@ -445,23 +454,18 @@ footer {
 
 /* Timeline Responsive Design Adjustments */
 @media (max-width: 768px) {
-	.container,
-	.container.left,
-	.container.right {
+	.container {
 		width: 90%;
 		left: 5%;
 		text-align: left;
 	}
-	.container h2::before {
-		display: none;
+	.container::after {
+		left: 0;
+		width: 25px;
 	}
-	.timeline::after {
-		left: 20px;
-		height: 100%;
-	}
+
 	.container::before {
-		left: -10px;
-		right: auto;
+		left: -12px;
 	}
 }
 
