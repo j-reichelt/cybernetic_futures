@@ -207,7 +207,7 @@ footer {
 .contact-info p {
 	/* override global P tag for padding/alignment */
 	text-align: left;
-	margin: 0, 0, 4px, 0;
+	margin: 0, 0, 4px 0;
 	line-height: 1;
 	padding: 0;
 }
@@ -336,7 +336,6 @@ footer {
 	max-width: 900px;
 	margin: 50px auto;
 	padding: 40px 0;
-	z-index: 1; /* keeps the timeline below the nav/banner */
 }
 /* Vertical neon spline */
 .timeline::after {
@@ -360,23 +359,34 @@ footer {
 	margin: 50px 0;
 }
 
+.timeline .content img {
+	width: 100%;
+	max-width: 300px;
+	height: auto;
+	border-radius: 10px;
+	margin-top: 10px;
+	box-shadow: 0 0 15px #00ffff, 0 0 3px #ff00ff;
+}
+
 /* Timeline headings (years) */
 .container h2 {
 	position: relative;
 	display: inline-block;
-	padding: 6px 18px;
-	background: linear-gradient(90deg, #00ffff, #ff00ff);
-	border-radius: 10px;
-	color: black;
-	font-weight: bold;
-	z-index: 5;
-	box-shadow: 0 0 px #00ffff, 0 0 20px #ff00ff;
+	z-index: 6;
+}
+/* Header alignment overrides */
+.container.left h2 {
+	text-align: left;
+}
+
+.container.right h2 {
+	text-align: right;
 }
 /* Base connector line */
 .container::after {
 	content: "";
 	position: absolute;
-	top: 28px;
+	top: 53px;
 	height: 3px;
 	background: #00ffff;
 	z-index: 2;
@@ -389,8 +399,16 @@ footer {
 }
 
 .container.left::after {
-	right: -50%;
-	width: calc(50% - 20px);
+	content: "";
+	position: absolute;
+	top: 53px;
+	left: 50%;
+	right: auto;
+	width: calc(50% - 8px);
+	height: 3px;
+	background: #00ffff;
+	z-index: 2;
+	box-shadow: 0 0 8px #00ffff;
 }
 
 /* Right Side: line extends LEFT to the spline */
@@ -400,38 +418,34 @@ footer {
 }
 
 .container.right::after {
-	left: -50%;
-	width: calc(50% - 20px);
+	content: "";
+	position: absolute;
+	top: 53px;
+	left: 50%;
+	right: 0;
+	width: calc(50% - 8px);
+	height: 3px;
+	background: #00ffff;
+	z-index: 2;
+	box-shadow: 0 0 8px #00ffff;
 }
 
 /* Sphere nodes at Spline Connections */
 .container::before {
 	content: "";
 	position: absolute;
-	top: 14px; /* verticall aligns with h2 */
+	top: 47px; /* verticall aligns with h2 */
+	left: 50%;
+	transform: translateX(-50%);
 	width: 16px;
 	height: 16px;
 	border-radius: 50%;
 	background: #00ffff;
 	z-index: 4;
-	box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff, 0 0 30px #00ffff;
 }
 
-/* LEFT node: connection at the spine */
-.container.left::before {
-	right: calc(-50% - 8px);
-}
-
-/* RIGHT node: connection at spine */
-.container.right::before {
-	left: calc(-50% - 8px);
-}
 .content {
-	background: rgba(0, 0, 0, 0.6);
-	padding: 15px;
-	border-radius: 10px;
-	box-shadow: 0 0 10px #00ffff55, 0 0 20px #ff00ff44;
-	margin-top: 10px;
+	margin-top: 40px;
 	position: relative;
 	z-index: 2;
 }
@@ -455,17 +469,19 @@ footer {
 /* Timeline Responsive Design Adjustments */
 @media (max-width: 768px) {
 	.container {
-		width: 90%;
-		left: 5%;
-		text-align: left;
+		width: 50%;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 	.container::after {
 		left: 0;
-		width: 25px;
+		width: 0;
 	}
 
 	.container::before {
-		left: -12px;
+		top: 47px;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 }
 
@@ -692,7 +708,7 @@ th {
 	letter-spacing: 1px;
 	text-transform: uppercase;
 	font-weight: 700;
-	text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+	text-shadow: 0 0 10px #00ffff, 0 0 20px #0ff, 0 0 30px, #ff00ff;
 	font-size: 0.95em;
 	word-wrap: break-word;
 }
@@ -712,7 +728,6 @@ table img {
 	height: 150px;
 	border-radius: 8px;
 	object-fit: cover;
-	border-radius: 8px;
 	box-shadow: 0 0 12px #00ffff55;
 }
 
@@ -797,9 +812,6 @@ table img {
 	margin-right: 60px;
 	font-size: 1.8rem;
 	color: #00ffff;
-	/*text-shadow: 0 0 10px #00FFFF,
-                 0 0 20px #00FFFF,
-                 0 0 40px #00FFFF; */
 	margin-right: 50px;
 	animation: glitchFlicker 2.5s infinite;
 }
