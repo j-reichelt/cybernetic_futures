@@ -330,14 +330,14 @@ footer {
 	margin: 0;
 	text-shadow: none;
 }
-/* Timeline/Chronosynapse Section - Definitely needs work */
+/* Timeline/Chronosynapse Section */
 .timeline {
 	position: relative;
-	max-width: 900px;
+	max-width: 1000px;
 	margin: 50px auto;
 	padding: 40px 0;
 }
-/* Vertical neon spline */
+/* Vertical neon spine */
 .timeline::after {
 	content: "";
 	position: absolute;
@@ -346,43 +346,50 @@ footer {
 	left: 50%;
 	width: 4px;
 	background: #00ffff;
-	transform: translateX(-50%);
+	margin-left: -2px; /* aligned to center of page */
 	border-radius: 2px;
 	box-shadow: 0 0 15px #00ffff, 0 0 30px #ff00ff;
 	z-index: 1;
 }
 
-/* Timeline event containers (left or right) */
-.container {
+/* Invisible Containers holding the data "time card" */
+.timeline .container {
+	padding: 10px 40px;
 	position: relative;
-	width: 45%;
-	margin: 50px 0;
+	width: 50%;
+	box-sizing: border-box;
+	background-color: transparent; /* container is invisible */
 }
 
-.timeline .content img {
-	width: 100%;
-	max-width: 300px;
-	height: auto;
+/* Make time card visible */
+.timeline .content-card {
+	padding: 20px;
+	background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent */
+	border: 1px solid #00FFFF;
 	border-radius: 10px;
-	margin-top: 10px;
-	box-shadow: 0 0 15px #00ffff, 0 0 3px #ff00ff;
-}
-
-/* Timeline headings (years) */
-.container h2 {
 	position: relative;
-	display: inline-block;
-	z-index: 6;
-}
-/* Header alignment overrides */
-.container.left h2 {
-	text-align: left;
+	box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+	transition: transform 0.3s ease;
 }
 
-.container.right h2 {
-	text-align: right;
+/* Hover effect for immersive interaction */
+.timeline .content-card:hover {
+	box-shadow: 0 0 20px #00FFFF, 0 0 40px #FF00FF;
+	transform: scale(1.02);
+	z-index: 10;
 }
-/* Base connector line */
+/* Pattern for LEFT side (odd items: 1, 3, 5, etc) */
+.timeline .container:nth-child(odd) {
+	left: 0;
+	text-align: right; /* text flows toward spine */
+}
+/* Pattern for RIGHT side (even items: 2, 4, 6, etc) */
+.timeline .container:nth-child(even) {
+	left: 50%;
+	text-align: left; /* moves text from this side closer to spine */
+}
+/* Rebuilding timeline 
+ Base connector line 
 .container::after {
 	content: "";
 	position: absolute;
@@ -392,7 +399,7 @@ footer {
 	z-index: 2;
 	box-shadow: 0 0 8px #00ffff;
 }
-/* LEFT Side: line extends RIGHT to the spline */
+LEFT Side: line extends RIGHT to the spline 
 .container.left {
 	left: 0;
 	text-align: right;
@@ -411,7 +418,7 @@ footer {
 	box-shadow: 0 0 8px #00ffff;
 }
 
-/* Right Side: line extends LEFT to the spline */
+Right Side: line extends LEFT to the spline 
 .container.right {
 	left: 55%;
 	text-align: left;
@@ -430,11 +437,11 @@ footer {
 	box-shadow: 0 0 8px #00ffff;
 }
 
-/* Sphere nodes at Spline Connections */
+Sphere nodes at Spline Connections 
 .container::before {
 	content: "";
 	position: absolute;
-	top: 47px; /* verticall aligns with h2 */
+	top: 47px; verticall aligns with h2 
 	left: 50%;
 	transform: translateX(-50%);
 	width: 16px;
@@ -465,7 +472,7 @@ footer {
 	color: #000;
 	box-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
 }
-
+*/
 /* Timeline Responsive Design Adjustments */
 @media (max-width: 768px) {
 	.container {
