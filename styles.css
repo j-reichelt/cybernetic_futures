@@ -365,7 +365,7 @@ footer {
 .timeline .content-card {
 	padding: 20px;
 	background: rgba(0, 0, 0, 0.7); /* Dark semi-transparent */
-	border: 1px solid #00FFFF;
+	border: 1px solid #00ffff;
 	border-radius: 10px;
 	position: relative;
 	box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
@@ -374,7 +374,7 @@ footer {
 
 /* Hover effect for immersive interaction */
 .timeline .content-card:hover {
-	box-shadow: 0 0 20px #00FFFF, 0 0 40px #FF00FF;
+	box-shadow: 0 0 20px #00ffff, 0 0 40px #ff00ff;
 	transform: scale(1.02);
 	z-index: 10;
 }
@@ -388,6 +388,52 @@ footer {
 	left: 50%;
 	text-align: left; /* moves text from this side closer to spine */
 }
+/* Nodes or notches for connection points */
+.timeline .container::after {
+	content: "";
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	background: #000;
+	border: 3px solid #00ffff;
+	border-radius: 50%;
+	top: 25px; /* Aligns with top of card */
+	z-index: 2;
+	box-shadow: 0 0 10px #00ffff;
+}
+
+/* Node position for LEFT side content */
+.timeline .container:nth-child(odd)::after {
+	right: -12px; /* -10px (half node width) - 2px (half line width) */
+}
+
+/* Node position for RIGHT items */
+.timeline .container:nth-child(even)::after {
+	left: -12px;
+}
+/* Circuit lines / horizontal connector lines */
+.timeline .container::before {
+	content: "";
+	position: absolute;
+	height: 2px;
+	width: 40px; /* length of connector */
+	background: #00ffff;
+	top: 35px; /* middle of the node */
+	box-shadow: 0 0 5px #00ffff;
+}
+
+/* Connector for LEFT side items */
+.timeline .container:nth-child(odd)::before {
+	right: 0; /* attaches to spine */
+}
+
+/* Connector for RIGHT side items */
+.timeline .container:nth-child(even)::before {
+	left: 0; /* attaches to spine */
+}
+
+/* Text and Image Styling */
+
 /* Rebuilding timeline 
  Base connector line 
 .container::after {
