@@ -354,7 +354,7 @@ footer {
 
 /* Invisible Containers holding the data "time card" */
 .timeline .container {
-	padding: 10px 40px;
+	padding: 10px 0;
 	position: relative;
 	width: 50%;
 	box-sizing: border-box;
@@ -382,11 +382,15 @@ footer {
 .timeline .container:nth-child(odd) {
 	left: 0;
 	text-align: right; /* text flows toward spine */
+	padding-right: 100px;
+	padding-left: 20px;
 }
 /* Pattern for RIGHT side (even items: 2, 4, 6, etc) */
 .timeline .container:nth-child(even) {
 	left: 50%;
 	text-align: left; /* moves text from this side closer to spine */
+	padding-left: 100px;
+	padding-right: 20px;
 }
 /*Nodes or notches for connection points */
 .timeline .container::after {
@@ -415,8 +419,8 @@ footer {
 .timeline .container::before {
 	content: "";
 	position: absolute;
-	height: 2px;
-	width: 40px; /* length of connector */
+	height: 3px;
+	width: 100px; /* length of connector */
 	background: #00ffff;
 	top: 35px; /* middle of the node */
 	box-shadow: 0 0 5px #00ffff;
