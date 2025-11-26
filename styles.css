@@ -370,6 +370,7 @@ footer {
 	position: relative;
 	box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
 	transition: transform 0.3s ease;
+	text-align: center;
 }
 
 /* Hover effect for immersive interaction */
@@ -398,13 +399,13 @@ footer {
 	position: absolute;
 	width: 20px;
 	height: 20px;
-	background: #000;
-	border: 3px solid #00ffff;
+	background: black;
+	border: 3px solid #cfff04;
 	border-radius: 50%;
-	top: 25px;  Aligns with top of card 
+	top: 38px;
 	z-index: 2;
-	box-shadow: 0 0 10px #00ffff;
-}*/
+	box-shadow: 0 0 10px #ff9900, 0 0 20px #ff4500;
+}
 
 /* Node position for LEFT side content */
 .timeline .container:nth-child(odd)::after {
@@ -422,8 +423,9 @@ footer {
 	height: 3px;
 	width: 100px; /* length of connector */
 	background: #00ffff;
-	top: 35px; /* middle of the node */
+	top: 47px; /* middle of the node */
 	box-shadow: 0 0 5px #00ffff;
+	z-index: 1;
 }
 
 /* Connector for LEFT side items */
@@ -443,22 +445,23 @@ footer {
 	text-shadow: 0 0 10px #ff00ff;
 	display: inline-block;
 	border-bottom: 2px solid #00ffff;
-	padding-bottom: 5px;
+	padding: 0 20px 5px 20px;
 }
 
 .timeline p {
-	color: #1FFBFF;
+	color: #1ffbff;
 	text-align: inherit; /* Inherits left/right from container */
 	padding: 0;
 }
 
 .timeline img {
+	display: block;
+	margin: 15px auto 0 auto; /* force images to be centered left/right */
 	width: 100%;
 	max-width: 300px;
 	height: auto;
 	border-radius: 5px;
-	margin-top: 15px;
-	border: 1px solid #00FFFF55;
+	border: 1px solid #00ffff55;
 }
 
 /* Timeline Responsive Design Adjustments */
@@ -466,33 +469,32 @@ footer {
 	.timeline::after {
 		left: 30px; /* moves the vertical spine to the far left */
 	}
-/* makes all containers full width and padded to the right of the line */
-.timeline .container {
-	width: 100%;
-	padding-left: 70px;
-	padding-right: 20px;
-}
-.timeline .container:nth-child(odd),
-.timeline .container:nth-child(even) {
-	left: 0;
-	text-align: left;
-}
+	/* makes all containers full width and padded to the right of the line */
+	.timeline .container {
+		width: 100%;
+		padding-left: 70px;
+		padding-right: 20px;
+	}
+	.timeline .container:nth-child(odd),
+	.timeline .container:nth-child(even) {
+		left: 0;
+		text-align: left;
+	}
 
-/* move all nodes to the left spine */
-.timeline .container:nth-child(odd)::after,
-.timeline .container:nth-child(even)::after {
-	left: 18px;
-	right: auto;
+	/* move all nodes to the left spine */
+	.timeline .container:nth-child(odd)::after,
+	.timeline .container:nth-child(even)::after {
+		left: 18px;
+		right: auto;
+	}
+	/* move all connectors to the left */
+	.timeline .container:nth-child(odd)::before,
+	.timeline .container:nth-child(even)::before {
+		left: 30px;
+		right: auto;
+		width: 40px;
+	}
 }
-/* move all connectors to the left */
-.timeline .container:nth-child(odd)::before,
-.timeline .container:nth-child(even)::before {
-	left: 30px;
-	right: auto;
-	width: 40px;
-}
-}
-
 
 /* Augmentations CSS Section - mostly grid stuff */
 
