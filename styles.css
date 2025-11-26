@@ -331,6 +331,76 @@ footer {
 	text-shadow: none;
 }
 /* Timeline/Chronosynapse Section */
+
+.timeline-intro {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.timeline-intro h1 {
+	font-size: 3em;
+	margin-bottom: 10px;
+	letter-spacing: 4px;
+	text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ffff;
+}
+
+.sys-msg {
+	color: #00ffff;
+	font-family: "Courier New", Courier, monospace; /* Terminal font */
+	font-size: 0.9em;
+	margin: 5px 0;
+	opacity: 0.8;
+}
+
+/* ChronoSynapse Header Container */
+.timeline-start-node {
+	position: relative;
+	text-align: center;
+	margin-bottom: 0; /* reduce gap so it touches top edge of vertical spine */
+	padding-bottom: 20px;
+	z-index: 2;
+}
+
+.chrono-title {
+	background: black;
+	border: 1px solid #ff00ff;
+	color: #ff00ff;
+	padding: 10px 30px;
+	display: inline-block;
+	border-radius: 4px;
+	box-shadow: 0 0 15px #ff00ff55;
+	margin: 0;
+	position: relative;
+	z-index: 5;
+	letter-spacing: 2px;
+}
+
+/* "Plug" connecting Header to Spine */
+.start-point {
+	width: 4px;
+	height: 30px; /* length of the connection */
+	background: #00ffff;
+	margin: 0 auto; /* centering it */
+	position: relative;
+	top: -2px;
+	box-shadow: 0 0 10px #00ffff;
+}
+
+/* glowy orb at top of connection point */
+.start-point::after {
+	content: "";
+	position: absolute;
+	width: 12px;
+	height: 12px;
+	background: #00ffff;
+	border-radius: 50%;
+	bottom: -5px; /* sits at the bottom of the plug */
+	left: 50%;
+	transform: translateX(-50%);
+	box-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+}
+
+
 .timeline {
 	position: relative;
 	max-width: 1000px;
