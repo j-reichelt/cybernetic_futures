@@ -388,7 +388,7 @@ footer {
 	left: 50%;
 	text-align: left; /* moves text from this side closer to spine */
 }
-/* Nodes or notches for connection points */
+/*Nodes or notches for connection points */
 .timeline .container::after {
 	content: "";
 	position: absolute;
@@ -397,10 +397,10 @@ footer {
 	background: #000;
 	border: 3px solid #00ffff;
 	border-radius: 50%;
-	top: 25px; /* Aligns with top of card */
+	top: 25px;  Aligns with top of card 
 	z-index: 2;
 	box-shadow: 0 0 10px #00ffff;
-}
+}*/
 
 /* Node position for LEFT side content */
 .timeline .container:nth-child(odd)::after {
@@ -433,110 +433,62 @@ footer {
 }
 
 /* Text and Image Styling */
-
-/* Rebuilding timeline 
- Base connector line 
-.container::after {
-	content: "";
-	position: absolute;
-	top: 53px;
-	height: 3px;
-	background: #00ffff;
-	z-index: 2;
-	box-shadow: 0 0 8px #00ffff;
+.timeline h2 {
+	margin-top: 0;
+	color: #ff00ff;
+	text-shadow: 0 0 10px #ff00ff;
+	display: inline-block;
+	border-bottom: 2px solid #00ffff;
+	padding-bottom: 5px;
 }
-LEFT Side: line extends RIGHT to the spline 
-.container.left {
+
+.timeline p {
+	color: #1FFBFF;
+	text-align: inherit; /* Inherits left/right from container */
+	padding: 0;
+}
+
+.timeline img {
+	width: 100%;
+	max-width: 300px;
+	height: auto;
+	border-radius: 5px;
+	margin-top: 15px;
+	border: 1px solid #00FFFF55;
+}
+
+/* Timeline Responsive Design Adjustments */
+@media screen and (max-width: 768px) {
+	.timeline::after {
+		left: 30px; /* moves the vertical spine to the far left */
+	}
+/* makes all containers full width and padded to the right of the line */
+.timeline .container {
+	width: 100%;
+	padding-left: 70px;
+	padding-right: 20px;
+}
+.timeline .container:nth-child(odd),
+.timeline .container:nth-child(even) {
 	left: 0;
-	text-align: right;
-}
-
-.container.left::after {
-	content: "";
-	position: absolute;
-	top: 53px;
-	left: 50%;
-	right: auto;
-	width: calc(50% - 8px);
-	height: 3px;
-	background: #00ffff;
-	z-index: 2;
-	box-shadow: 0 0 8px #00ffff;
-}
-
-Right Side: line extends LEFT to the spline 
-.container.right {
-	left: 55%;
 	text-align: left;
 }
 
-.container.right::after {
-	content: "";
-	position: absolute;
-	top: 53px;
-	left: 50%;
-	right: 0;
-	width: calc(50% - 8px);
-	height: 3px;
-	background: #00ffff;
-	z-index: 2;
-	box-shadow: 0 0 8px #00ffff;
+/* move all nodes to the left spine */
+.timeline .container:nth-child(odd)::after,
+.timeline .container:nth-child(even)::after {
+	left: 18px;
+	right: auto;
+}
+/* move all connectors to the left */
+.timeline .container:nth-child(odd)::before,
+.timeline .container:nth-child(even)::before {
+	left: 30px;
+	right: auto;
+	width: 40px;
+}
 }
 
-Sphere nodes at Spline Connections 
-.container::before {
-	content: "";
-	position: absolute;
-	top: 47px; verticall aligns with h2 
-	left: 50%;
-	transform: translateX(-50%);
-	width: 16px;
-	height: 16px;
-	border-radius: 50%;
-	background: #00ffff;
-	z-index: 4;
-}
-
-.content {
-	margin-top: 40px;
-	position: relative;
-	z-index: 2;
-}
-
-.timeline-page h1 {
-	color: #ff00ff;
-	font-size: 3em;
-	text-shadow: 0 0 10px #ff00ff, 0 0 20px #0ff, 0 0 30px, #ff00ff;
-	animation: neonPulse 1.5s infinite alternate;
-}
-
-.timeline-page h2 {
-	background: linear-gradient(90deg, #0ff, #ff00ff);
-	padding: 5px 15px;
-	border-radius: 8px;
-	display: inline-block;
-	color: #000;
-	box-shadow: 0 0 10px #0ff, 0 0 20px #ff00ff;
-}
-*/
-/* Timeline Responsive Design Adjustments */
-@media (max-width: 768px) {
-	.container {
-		width: 50%;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-	.container::after {
-		left: 0;
-		width: 0;
-	}
-
-	.container::before {
-		top: 47px;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-}
 
 /* Augmentations CSS Section - mostly grid stuff */
 
