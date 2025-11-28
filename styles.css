@@ -856,7 +856,24 @@ conflict of spacing around other elements */
 	margin: 8px 0;
 	color: #e0e0e0;
 }
+/* mobile table scroll responsiveness */
+.table-scrolling {
+	width: 90%;
+	margin: 40px auto;
+	overflow-x: auto; /* permits horizontal scrolling on small devices */
+	border-radius: 8px;
+	box-shadow: 0 0 20px #00ffff55;
+}
 
+.table-scrolling table {
+	width: 100%;
+	margin: 0;
+	min-width: 800px; /* forces table to stay wide enough to be readable */
+}
+
+.table-scrolling td {
+	vertical-align: top;
+}
 /* Responsive design & adaptations */
 @media (max-width: 1024px) {
 	.augment_grid {
