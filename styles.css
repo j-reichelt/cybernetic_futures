@@ -724,7 +724,24 @@ table tr:hover td {
 	}
 }
 
-/* Augmentations CSS Section - mostly grid stuff */
+/* Augmentations Page Styling */
+
+/* Intro section styling */
+.intro-text {
+	text-align: left;
+	margin-bottom: 50px;
+}
+
+.stat-highlight {
+	color: #ff00ff;
+	margin-top: 15px;
+}
+/* Avatar 4 card link adjustments */
+.card-link {
+	font-size: 0.8em;
+	margin-top: 10px;
+}
+/* Augmentation grid stuff */
 
 .augment_grid {
 	display: grid;
