@@ -7,7 +7,7 @@ body {
 	padding: 0;
 	text-align: center;
 }
-/* Homepage - humble beginnings */
+/* Homepage */
 /* Research showed that a hero section is near the top of a page - contains key elements */
 .hero {
 	text-align: center;
@@ -165,7 +165,7 @@ p {
 
 /* Stlying for general content sections. */
 .info-block {
-	max-width: 800px; /* prevent text from stretching too wide */
+	max-width: 1200px; /* prevent text from stretching too wide */
 	margin: 60px auto;
 	padding: 0 20px;
 }
@@ -176,6 +176,20 @@ p {
 	text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
 	margin-bottom: 20px;
 	font-size: 1.8em;
+}
+
+/* External reference link styling */
+.ref-link {
+	color: #ff00ff;
+	text-decoration: underline;
+	font-weight: bold;
+	transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.ref-link:hover {
+	color: #ffffff;
+	text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+	cursor: pointer;
 }
 
 /* Call to Action text styling */
