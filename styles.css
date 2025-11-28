@@ -165,7 +165,7 @@ p {
 
 /* Stlying for general content sections. */
 .info-block {
-	max-width: 800; /* prevent text from stretching too wide */
+	max-width: 800px; /* prevent text from stretching too wide */
 	margin: 60px auto;
 	padding: 0 20px;
 }
@@ -176,6 +176,32 @@ p {
 	text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
 	margin-bottom: 20px;
 	font-size: 1.8em;
+}
+
+/* Call to Action text styling */
+.cta-text {
+	margin-top: 20px;
+	font-size: 1.1em;
+	font-style: italic;
+	color: #ffffff;
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+.cta-timeline-link {
+	color: #ff00ff;
+	text-decoration: none;
+	font-weight: bold;
+	border-bottom: 2px solid #ff00ff;
+	transition: all 0.3s ease;
+}
+
+/* hover effect for cta link */
+.cta-timeline-link:hover {
+	color: #00ffff;
+	border-bottom: 2px solid #00ffff;
+	text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+	cursor: pointer;
 }
 /*footer styling */
 footer {
@@ -328,6 +354,58 @@ footer {
 .quick-links h3 {
 	margin: 0 0 10px 0;
 	padding: 0;
+}
+/* Newsletter form & styling */
+.newsletter-form {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	max-width: 300px;
+}
+
+.newsletter-form input[type="email"],
+.newsletter-form button {
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #00ffff;
+	font-family: "Orbitron", sans-serif;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.newsletter-form input[type="email"] {
+	background: rgba(0, 0, 0, 0.5);
+	color: #ffffff;
+}
+
+/* Checkbox styling */
+.form-checkbox-group {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	text-align: left;
+	color: #1ffbff;
+	font-size: 0.8em;
+}
+
+.form-checkbox-group input {
+	cursor: pointer;
+	accent-color: #00ffff; /* makes check box cyan when clicked */
+}
+
+/* button hover effects */
+.newsletter-form button {
+	background: #00ffff;
+	color: #000;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+.newletter-form button:hover {
+	background: #ff00ff;
+	color: #fff;
+	box-shadow: 0 0 10px #ff00ff;
 }
 
 .bottom-bar {

@@ -155,7 +155,19 @@
 					<h3>Newsletter</h3>
 					<p>Join the Cybernetic Network for updates and new breakthroughs.</p>
 					<form class="newsletter-form">
-						<input type="email" placeholder="Enter your email" required />
+						<!-- Element type: text input-->
+						<input
+							type="email"
+							placeholder="Enter your email"
+							aria-label="Email Address"
+							required
+						/>
+						<!--Element type: checkbox-->
+						<div class="form-checkbox-group">
+							<input type="checkbox" id="terms" required />
+							<label for="terms">I accept the neural-link protocols</label>
+						</div>
+						<!--Element type: button -->
 						<button type="submit">Subscribe</button>
 					</form>
 				</div>
