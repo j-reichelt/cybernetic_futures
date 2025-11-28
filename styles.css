@@ -103,33 +103,43 @@ body {
 	position: absolute;
 	top: 100%; /* Pushes it below the black bar */
 	left: 0;
-	width: 100%;
+	width: 250px;
 	background-color: black;
 	border-bottom: 2px solid #00ffff;
-	padding: 20px 0;
-	text-align: center;
+	border-right: 2px solid #00ffff;
+	box-shadow: 5px 5px 15px #00ffff33;
+	padding: 10px 0;
+	text-align: left;
 	z-index: 1001;
 }
 
 .mobile-dropdown a {
 	display: block;
-	padding: 15px 0;
+	padding: 15px 20px;
 	color: #1ffbff;
 	text-decoration: none;
 	font-family: "Orbitron", sans-serif;
-	font-size: 1.1em;
+	font-size: 1em;
 	border-bottom: 1px solid #333;
+	transition: background 0.3s ease;
 }
 
 .mobile-dropdown a:hover {
 	background-color: #111;
 	color: #ff00ff;
+	border-left: 4px solid #ff00ff;
 }
 
 /* Opening the Menu*/
 /* When checkbox is checked, show .mobile-dropdown */
 .nav-checkbox:checked ~ .mobile-dropdown {
 	display: flex;
+}
+/* Responsive desktop nav, hides the links */
+@media (max-width: 768px) {
+	.desktop-menu {
+		display: none;
+	}
 }
 
 #topnav a {
