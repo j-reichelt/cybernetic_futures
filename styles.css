@@ -135,6 +135,17 @@ body {
 .nav-checkbox:checked ~ .mobile-dropdown {
 	display: flex;
 }
+
+/* Animating the drop down icon into an X when clicked*/
+.nav-checkbox:checked ~ .nav-icon .line:nth-child(1) {
+	transform: rotate(45deg) translate(5px, 6px);
+}
+.nav-checkbox:checked ~ .nav-icon .line:nth-child(2) {
+	opacity: 0;
+}
+.nav-checkbox:checked ~ .nav-icon .line:nth-child(3) {
+	transform: rotate(-45deg) translate(5px, -6px);
+}
 /* Responsive desktop nav, hides the links */
 @media (max-width: 768px) {
 	.desktop-menu {
@@ -550,13 +561,14 @@ footer {
 	margin-bottom: 20px;
 }
 
+/*
 .timeline-intro h1 {
 	font-size: 3em;
 	margin-bottom: 10px;
 	letter-spacing: 4px;
 	text-shadow: 2px 2px 0px #ff00ff, -2px -2px 0px #00ffff;
 }
-
+*/
 .sys-msg {
 	color: #00ffff;
 	font-family: "Courier New", Courier, monospace; /* Terminal font */
