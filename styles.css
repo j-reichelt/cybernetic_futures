@@ -632,6 +632,66 @@ footer {
 	border: 1px solid #00ffff55;
 }
 
+/* Sub-page Links style */
+.spec-link {
+	display: inline-block;
+	margin-top: 15px;
+	font-size: 0.9em;
+	letter-spacing: 1px;
+	color: #ff00ff;
+	text-decoration: none;
+	font-weight: bold;
+	border-bottom: 2px solid #ff00ff;
+	transition: all 0.3s ease;
+}
+
+.spec-link:visited {
+	color: #ff00ff;
+}
+
+.spec-link:hover {
+	color: #00ffff;
+	border-color: #00ffff;
+	text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+	transform: scale(1.05); /* pop effect */
+}
+
+/* Sub page Special system message text */
+.hero .access-msg {
+	color: #ff00ff;
+	text-shadow: none;
+	letter-spacing: 2px;
+	font-weight: bold;
+	margin-bottom: 40px;
+	font-family: "Courier New", Courier, monospace;
+}
+
+.spec-layout {
+	text-align: center;
+}
+
+/* spec-page image styling */
+.spec-img {
+	width: 100%;
+	max-width: 600px;
+	margin-bottom: 20px;
+	border-radius: 10px;
+	border: 2px solid #ffdd00;
+	box-shadow: 0 0 15px #ffdd00, 0 0 30px #ff9900;
+}
+/* Spec Sheet table styling */
+table strong {
+	color: #ff00ff;
+}
+
+table tr:hover td {
+	background: rgba(0, 255, 255, 0.1); /*highlight row on hover */
+	cursor: crosshair; /* adds a custom cursor */
+}
+
+.nav-return {
+	margin: 40px 0;
+}
 /* Timeline Responsive Design Adjustments */
 @media screen and (max-width: 768px) {
 	.timeline::after {
