@@ -760,6 +760,8 @@ table tr:hover td {
 	flex-direction: column;
 	align-items: center;
 	gap: 10px;
+	margin-bottom: 50px;
+	height: auto;
 }
 
 .avatar_pair img {
@@ -875,24 +877,82 @@ conflict of spacing around other elements */
 	vertical-align: top;
 }
 /* Responsive design & adaptations */
+/* --- Tablet / Medium Screens (Max-Width 1024px) --- */
 @media (max-width: 1024px) {
 	.augment_grid {
 		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
+/* --- Mobile / Small Tablets (Max-Width 768px) --- */
 @media (max-width: 768px) {
+	/* 1. Augmentation Grid becomes 2 columns */
 	.augment_grid {
 		grid-template-columns: repeat(2, 1fr);
 	}
-}
 
-@media (max-width: 480px) {
-	.augment_grid {
-		grid-template-columns: 1fr;
+	/* 2. Table Images shrink slightly */
+	table img {
+		width: 150px;
+		height: 120px;
+	}
+
+	/* --- FOOTER FIXES (Stops sticking out) --- */
+
+	/* Stack content vertically */
+	.footer-top {
+		flex-direction: column;
+		gap: 30px;
+		align-items: flex-start;
+	}
+
+	/* Fix container padding/width */
+	.footer-container {
+		padding-left: 20px;
+		padding-right: 20px;
+		width: 100%;
+		box-sizing: border-box;
+	}
+
+	/* Remove side margins that cause overflow */
+	.footer-content {
+		margin: 0 0 20px 0; /* Removes the left/right 20px margin */
+		width: 100%; /* Ensures text wraps correctly */
+	}
+
+	/* Newsletter fixes */
+	.footer-content-newsletter {
+		margin-top: 0;
+		width: 100%;
+	}
+	.newsletter-form {
+		max-width: 100%;
 	}
 }
 
+/* --- Small Mobile Phones (Max-Width 480px) --- */
+@media (max-width: 480px) {
+	/* 1. Augmentation Grid becomes 1 column */
+	.augment_grid {
+		grid-template-columns: 1fr;
+		row-gap: 60px; /* Increased gap for safety */
+	}
+
+	/* Force container height so cards don't overlap */
+	/* This creates a hard boundary around the flip card */
+	.avatar_pair {
+		margin-bottom: 20px;
+		min-height: 400px; /* Forces grid row to be tall enough for the 360px card */
+		width: 100%;
+	}
+
+	/* 2. Shrink Table Images further */
+	table img {
+		width: 120px;
+		height: 90px;
+	}
+}
+/*  End Responsiveness trial and error fixes */
 .card {
 	width: 250px;
 	height: 360px;
@@ -997,7 +1057,7 @@ td {
 
 /* Table Images */
 table img {
-	width: 200px;
+	width: 190px;
 	height: 150px;
 	border-radius: 8px;
 	object-fit: cover;
@@ -1009,6 +1069,28 @@ table img {
 	table img {
 		width: 150px;
 		height: 120px;
+	}
+	/* stacks them on top of each other */
+	.footer-top {
+		flex-direction: column;
+		gap: 30px;
+		align-items: flex-start;
+	}
+	/* fixed padding and width */
+	.footer-container {
+		padding-left: 20px;
+		padding-right: 20px;
+		width: 100%;
+		box-sizing: border-box;
+	}
+	/* Adjusts newsletter spacing */
+	.footer-content-newsletter {
+		margin-top: 20px;
+		width: 100%;
+	}
+	/* Lets the form fill the screen */
+	.newsletter-form {
+		max-width: 100%;
 	}
 }
 
