@@ -34,93 +34,97 @@
 			</div>
 		</div>
 		<h1>Current and Future Outlook</h1>
+		<section class="info-block intro-text">
+			<p>A brief collection of major milestones now and future implications</p>
+		</section>
+		<!--div class table wrapper for fixing mobile responsiviness for too wide tables -->
+		<div class="table-scrolling">
+			<table>
+				<tr>
+					<th>Neural Interfaces</th>
+					<th>Biomech Mobility</th>
+					<th>Sensory Overlays</th>
+					<th>Next-Gen Brain Computer Integration</th>
+					<th>Military Adaptations</th>
+				</tr>
 
-		<p>A brief collection of major milestones now and future implications</p>
+				<tr>
+					<td>Neural Speech Restoration</td>
+					<td>AI-Driven Prosthetics</td>
+					<td>Consumer AR Lenses</td>
+					<td>Neural Co-Processors</td>
+					<td>Synthetic Senses</td>
+				</tr>
+				<tr>
+					<td>
+						Implants translating brain signals into real-time speech, restoring
+						communication for individuals with paralysis.
+					</td>
 
-		<table>
-			<tr>
-				<th>Neural Interfaces</th>
-				<th>Biomech Mobility</th>
-				<th>Sensory Overlays</th>
-				<th>Next-Gen Brain Computer Integration</th>
-				<th>Military Adaptations</th>
-			</tr>
+					<td>
+						Prosthetics enhanced with adaptive AI, improving precision, balance,
+						and real-time user responsiveness.
+					</td>
 
-			<tr>
-				<td>Neural Speech Restoration</td>
-				<td>AI-Driven Prosthetics</td>
-				<td>Consumer AR Lenses</td>
-				<td>Neural Co-Processors</td>
-				<td>Synthetic Senses</td>
-			</tr>
-			<tr>
-				<td>
-					Implants translating brain signals into real-time speech, restoring
-					communication for individuals with paralysis.
-				</td>
+					<td>
+						Augmented reality lenses offering HUD-style overlays, biometrics,
+						navigation, and real-time environmental data.
+					</td>
 
-				<td>
-					Prosthetics enhanced with adaptive AI, imrpving precision, balance,
-					and real-time user responsiveness.
-				</td>
+					<td>
+						Brain-machine co-processors designed to support memory, focus,
+						planning, and cognitive processing.
+					</td>
 
-				<td>
-					Augmented reality lenses offering HUD-style overlays, biometics,
-					navigation, and real-time environmental data.
-				</td>
+					<td>
+						Augmentations enabling new sensory abilities such as infrared
+						perception, enhanced hearing, or magnetic field detection.
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<img
+							src="web_app_images/future_outlook_images/ai-generated-9294330_1280.png"
+							alt="AI brain with neural network connections"
+						/>
+					</td>
+					<td>
+						<img
+							src="web_app_images/future_outlook_images/ai-generated hand-9342713_1280.jpg"
+							alt="Advanced hand prosthetic"
+						/>
+					</td>
+					<td>
+						<img
+							src="web_app_images/future_outlook_images/ai-generated-8818465_1280.jpg"
+							alt="Augmented reality lenses"
+						/>
+					</td>
+					<td>
+						<img
+							src="web_app_images/current_tech_images/brain_computer_interface.jpg"
+							alt="brain machine interface"
+						/>
+					</td>
+					<td>
+						<img
+							src="web_app_images/future_outlook_images/military_app.jpg"
+							alt="complete cybernetic militarized tactical exosuit"
+						/>
+					</td>
+				</tr>
+			</table>
+		</div>
 
-				<td>
-					Brain-machine co-processors designed to support memory, focus,
-					planning, and cognitive processing.
-				</td>
-
-				<td>
-					Augementations enabling new sensory abilities such as infared
-					perception, enhanced hearing, or magnetic field detection.
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<img
-						src="web_app_images/future_outlook_images/ai-generated-9294330_1280.png"
-						alt="AI brain with neural network connections"
-					/>
-				</td>
-				<td>
-					<img
-						src="web_app_images/future_outlook_images/ai-generated hand-9342713_1280.jpg"
-						alt="Advanced hand prosthetic"
-					/>
-				</td>
-				<td>
-					<img
-						src="web_app_images/future_outlook_images/ai-generated-8818465_1280.jpg"
-						alt="Augmented reality lenses"
-					/>
-				</td>
-				<td>
-					<img
-						src="web_app_images/current_tech_images/brain_computer_interface.jpg"
-						alt="brain machine interface"
-					/>
-				</td>
-				<td>
-					<img
-						src="web_app_images/future_outlook_images/military_app.jpg"
-						alt="complete cybernetic militarized tactical exosuit"
-					/>
-				</td>
-			</tr>
-		</table>
-
-		<p>
-			Cybernetics are rapidly evolving, offering new ways to enhance human
-			capabilities, restore lost function, and improve quality of life. From
-			communication and mobility to sensory expansion, these technologies
-			continue to redefine what is possible - opening doors to a future where
-			human limitations can be overcome through innovation.
-		</p>
-
+		<section class="info-block">
+			<p>
+				Cybernetics are rapidly evolving, offering new ways to enhance human
+				capabilities, restore lost function, and improve quality of life. From
+				communication and mobility to sensory expansion, these technologies
+				continue to redefine what is possible - opening doors to a future where
+				human limitations can be overcome through innovation.
+			</p>
+		</section>
 		<footer>
 			<div class="footer-container">
 				<div class="footer-top">
@@ -146,7 +150,19 @@
 					<h3>Newsletter</h3>
 					<p>Join the Cybernetic Network for updates and new breakthroughs.</p>
 					<form class="newsletter-form">
-						<input type="email" placeholder="Enter your email" required />
+						<!-- Element type: text input-->
+						<input
+							type="email"
+							placeholder="Enter your email"
+							aria-label="Email Address"
+							required
+						/>
+						<!--Element type: checkbox-->
+						<div class="form-checkbox-group">
+							<input type="checkbox" id="terms" required />
+							<label for="terms">I accept the neural-link protocols</label>
+						</div>
+						<!--Element type: button -->
 						<button type="submit">Subscribe</button>
 					</form>
 				</div>

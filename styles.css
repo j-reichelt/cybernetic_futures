@@ -821,7 +821,7 @@ conflict of spacing around other elements */
 }
 /* stat glossary stlying */
 .stat-info {
-	text-align: center;
+	text-align: left;
 }
 .stat-glossary {
 	margin: 40px auto;
