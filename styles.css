@@ -96,7 +96,7 @@ body {
 	text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
 }
 
-/* --- 3. MOBILE DROPDOWN (Hidden List) --- */
+/* Mobile Dropdown  */
 .mobile-dropdown {
 	display: none; /* Hidden by default */
 	flex-direction: column;
@@ -846,7 +846,7 @@ table tr:hover td {
 
 /* Intro section styling */
 .intro-text {
-	text-align: left;
+	text-align: center;
 	margin-bottom: 50px;
 }
 
@@ -995,27 +995,27 @@ conflict of spacing around other elements */
 	vertical-align: top;
 }
 /* Responsive design & adaptations */
-/* --- Tablet / Medium Screens (Max-Width 1024px) --- */
+/* Tablet / Medium Screens  */
 @media (max-width: 1024px) {
 	.augment_grid {
 		grid-template-columns: repeat(3, 1fr);
 	}
 }
 
-/* --- Mobile / Small Tablets (Max-Width 768px) --- */
+/* Mobile / Small Tablets */
 @media (max-width: 768px) {
-	/* 1. Augmentation Grid becomes 2 columns */
+	/* Augmentation Grid becomes 2 columns */
 	.augment_grid {
 		grid-template-columns: repeat(2, 1fr);
 	}
 
-	/* 2. Table Images shrink slightly */
+	/* Table Images shrink slightly */
 	table img {
 		width: 150px;
 		height: 120px;
 	}
 
-	/* --- FOOTER FIXES (Stops sticking out) --- */
+	/* Footer Fixes (Stops content from sticking out)*/
 
 	/* Stack content vertically */
 	.footer-top {
@@ -1048,9 +1048,9 @@ conflict of spacing around other elements */
 	}
 }
 
-/* --- Small Mobile Phones (Max-Width 480px) --- */
+/* Small Mobile Phones */
 @media (max-width: 480px) {
-	/* 1. Augmentation Grid becomes 1 column */
+	/* Augmentation Grid becomes 1 column */
 	.augment_grid {
 		grid-template-columns: 1fr;
 		row-gap: 60px; /* Increased gap for safety */
@@ -1064,7 +1064,7 @@ conflict of spacing around other elements */
 		width: 100%;
 	}
 
-	/* 2. Shrink Table Images further */
+	/* Shrink Table Images further */
 	table img {
 		width: 120px;
 		height: 90px;
@@ -1125,6 +1125,34 @@ conflict of spacing around other elements */
 .card_back li {
 	margin-bottom: 8px;
 	letter-spacing: 1px;
+}
+
+/* Future Outlook page styling */
+
+/* Intro system message */
+.sys-msg-large {
+	font-family: "Share Tech Mono", monospace;
+	color: #00ffff;
+	font-size: 1.3em;
+	text-align: center;
+	letter-spacing: 2px;
+	text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+/* blinking cursor animation */
+.blink {
+	animation: blinker 1s steps(2, start) infinite; /* step 2 makes cursor blink sharply */
+	color: #00ffff;
+	font-weight: bold;
+	margin-right: 10px;
+}
+
+@keyframes blinker {
+	to {
+		visibility: hidden;
+	}
 }
 
 table {
