@@ -14,12 +14,31 @@
 	</head>
 	<body>
 		<!-- Navigation -->
-		<div class="pagenav" id="topnav">
-			<a href="homepage.index.html">Home</a>
-			<a href="timeline.html">Timeline</a>
-			<a href="augmentations.html" class="active">Augmentations</a>
-			<a href="future_outlook.html">Future Outlook</a>
-		</div>
+		<nav class="pagenav" id="topnav">
+			<!--Hamburger nav icon-->
+			<input type="checkbox" id="nav-toggle" class="nav-checkbox" />
+			<!--Nav checkbox top left-->
+			<label for="nav-toggle" class="nav-icon">
+				<span class="line"></span>
+				<span class="line"></span>
+				<span class="line"></span>
+			</label>
+
+			<!-- Drop Down Menu Items-->
+			<div class="mobile-dropdown">
+				<a href="homepage.index.html">Home</a>
+				<a href="timeline.html">Timeline</a>
+				<a href="augmentations.html">Augmentations</a>
+				<a href="future_outlook.html">Future Outlook</a>
+			</div>
+			<!--Top Bar Nav Menu-->
+			<div class="desktop-menu">
+				<a href="homepage.index.html">Home</a>
+				<a href="timeline.html">Timeline</a>
+				<a href="augmentations.html">Augmentations</a>
+				<a href="future_outlook.html">Future Outlook</a>
+			</div>
+		</nav>
 
 		<header class="hero">
 			<h1>BLUEPRINT: TITAN MK II</h1>
@@ -95,7 +114,12 @@
 						<h3>Contact Us</h3>
 						<p>Email: jcar8169@my.msmc.edu</p>
 						<p>Email: jrei3265@my.msmc.edu</p>
-						<p>Address: Mount Saint Mary College</p>
+						<p>
+							Address:
+							<a href="https://www.msmc.edu/" target="_blank" class="ref-link"
+								>Mount Saint Mary College</a
+							>
+						</p>
 					</div>
 
 					<div class="footer-content quick-links">
@@ -113,21 +137,19 @@
 					<h3>Newsletter</h3>
 					<p>Join the Cybernetic Network for updates and new breakthroughs.</p>
 					<form class="newsletter-form">
-						<!-- Element type: Email -->
+						<!-- Element type: text input-->
 						<input
 							type="email"
 							placeholder="Enter your email"
 							aria-label="Email Address"
 							required
 						/>
-
-						<!-- Element type: Checkbox -->
+						<!--Element type: checkbox-->
 						<div class="form-checkbox-group">
 							<input type="checkbox" id="terms" required />
 							<label for="terms">I accept the neural-link protocols</label>
 						</div>
-
-						<!-- Element type: Button -->
+						<!--Element type: button -->
 						<button type="submit">Subscribe</button>
 					</form>
 				</div>
