@@ -494,7 +494,6 @@ footer {
 	max-width: 300px;
 }
 
-.newsletter-form input[type="email"],
 .newsletter-form button {
 	padding: 10px;
 	border-radius: 5px;
@@ -502,11 +501,38 @@ footer {
 	font-family: "Orbitron", sans-serif;
 	width: 100%;
 	box-sizing: border-box;
+	/* Button specific colors */
+	background: #00ffff;
+	color: #000;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background 0.3s ease;
+}
+
+/* Placeholder email input text styling */
+.newsletter-form input::placeholder {
+	color: #a6ffff;
+	opacity: 1;
+	font-style: italic;
 }
 
 .newsletter-form input[type="email"] {
-	background: rgba(0, 0, 0, 0.5);
+	background: #141414;
+	padding: 10px;
+	border-radius: 5px;
+	border: 1px solid #00ffff;
+	font-family: "Orbitron", sans-serif;
+	width: 100%;
+	box-sizing: border-box;
 	color: #ffffff;
+	font-size: 1rem;
+}
+
+/* Make border glow when user clicks in */
+.newsletter-form input[type="email"]:focus {
+	outline: none;
+	box-shadow: 0 0 10px #00ffff;
+	background: #000000;
 }
 
 /* Checkbox styling */
