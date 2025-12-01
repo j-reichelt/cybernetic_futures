@@ -602,7 +602,47 @@ footer {
 	margin: 5px 0;
 	opacity: 0.8;
 }
+/* Background image */
+.timeline-page::before {
+	content: "";
+	position: fixed; /* keeps image in place while scrolling */
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-image: url("web_app_images/timeline_images/easter-egg-2.png");
+	background-position: center center;
+	/*background-size: 400px auto; */
+	background-repeat: no-repeat;
+	background-size: cover; /* 'cover' fills the screen, 'contain' shows the whole character */
+	/* 'Ghost Effect' */
+	opacity: 0;
+	z-index: -1; /* puts image behind text and cards */
+	/* cyberpunk styling */
+	filter: grayscale(100%) contrast(120%); /* contrast is gritty black and white */
+	pointer-events: none; /* maintain clickability of links */
+	transition: opacity 4s ease-in-out;
+}
+/* Show image when mouse is on 'body' */
+.timeline-page:hover::before {
+	opacity: 0.2;
+}
 
+/* Hide image when hovering over specific content */
+.timeline-page:has(.timeline:hover)::before,
+.timeline-page:has(#topnav:hover)::before,
+.timeline-page:has(footer:hover)::before,
+.timeline-page:has(.banner:hover)::before,
+.timeline-page:has(.content-card:hover)::before {
+	opacity: 0;
+}
+
+/* Hidden on mobile to reduce clutter */
+@media screen and (max-width: 768px) {
+	.timeline-page::before {
+		display: none;
+	}
+}
 /* ChronoSynapse Header Container */
 .timeline-start-node {
 	position: relative;
@@ -1343,7 +1383,7 @@ table img {
 	animation: glitchFlicker 2.5s infinite;
 }
 
-/*Adjusting scrolll speed based on device */
+/*Adjusting scroll speed based on device */
 :root {
 	--scroll-duration: 20s;
 }
